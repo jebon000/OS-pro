@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<conio.h>
 void Sorting();
 int n;
 struct process
@@ -31,16 +32,16 @@ int main()
     float wait_time=0,taround_time=0,avg_w_t=0,avg_taround_time=0;
     printf("Enter the number of total processes\n");
     scanf("%d",&n);
-    for (i=0;i<n;i++)
+    for(i=0;i<n;i++)
     {
         p_list[i].p_no = i + 1;
-        printf("Enter details For process %d\n", p_list[i].p_no);
+        printf("Enter details For process %d\n",p_list[i].p_no);
         printf("Enter Arrival Time");
-        scanf("%d", &p_list[i].arrival_t);
+        scanf("%d",&p_list[i].arrival_t);
         printf("Enter Burst Time");
         scanf("%d", &p_list[i].burst_t);
         p_list[i].flag = 0;
-        b_t = b_t + p_list[i].burst_t;
+        b_t = b_t+p_list[i].burst_t;
     }
     Sorting();
     for(i=0;i<n;i++)
@@ -82,4 +83,5 @@ int main()
     }
     printf("Average turn-around time%f\t\n\n",avg_taround_time);
     printf("Average waiting time\t %f\t\n",avg_w_t);
+	getch();
 }
