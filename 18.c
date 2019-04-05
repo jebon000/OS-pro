@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
-void Sorting();
+void Sort();
 int n;
 struct process
 {
@@ -8,7 +8,7 @@ struct process
     int arrival_t,burst_t,ct,wait_t,taround_time,p;
 	int flag;
 }p_list[100];
-void Sorting()
+void Sort()
 {
     struct process p;
     int i,j;
@@ -43,7 +43,7 @@ int main()
         p_list[i].flag = 0;
         b_t = b_t+p_list[i].burst_t;
     }
-    Sorting();
+    Sort();
     for(i=0;i<n;i++)
     {
         a[i]=p_list[i].burst_t;
