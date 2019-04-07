@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
 #include<conio.h>
 void Sort();
 int n;
@@ -16,7 +18,7 @@ void Sort()
     {
         for(j=i+1;j<n;j++)
         {
-            if(p_list[i].arr_t >p_list[j].arr_t)
+            if(p_list[i].arr_t>p_list[j].arr_t)
             {
                 p=p_list[i];
                 p_list[i]=p_list[j];
@@ -34,14 +36,14 @@ int main()
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
-        p_list[i].p_no = i + 1;
+        p_list[i].p_no=i+1;
         printf("Enter details For process %d\n",p_list[i].p_no);
-        printf("Enter Arrival Time");
+        printf("Enter arrival time");
         scanf("%d",&p_list[i].arr_t);
-        printf("Enter Burst Time");
-        scanf("%d", &p_list[i].bur_t);
+        printf("Enter burst time");
+        scanf("%d",&p_list[i].bur_t);
         p_list[i].flag = 0;
-        b_t = b_t+p_list[i].bur_t;
+        b_t=b_t+p_list[i].bur_t;
     }
     Sort();
     for(i=0;i<n;i++)
@@ -79,7 +81,7 @@ int main()
     printf("PNO \tAT \tCT \tTA \tWT t\n");
     for(i=0;i<n;i++)
     {
-        printf("P%d\t%d\t%d\t%d\t%d\n",p_list[i].p_no,p_list[i].arr_t,p_list[i].ct,p_list[i].tar_time,p_list[i].wait_t);
+        printf("P%d \t %d \t %d \t %d \t %d\n",p_list[i].p_no,p_list[i].arr_t,p_list[i].ct,p_list[i].tar_time,p_list[i].wait_t);
     }
     printf("Average turn-around time%f\t\n\n",avg_tar_time);
     printf("Average waiting time\t %f\t\n",avg_w_t);
