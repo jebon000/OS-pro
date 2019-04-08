@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<string.h>
+#include<conio.h>
 int main()
 {
 FILE *fp=fopen("cpu_burst.txt","r");
@@ -14,7 +15,8 @@ while((getc(fp))!=EOF)
 fscanf(fp,"%d",&bt[i]);
 if(bt[i]>0)
 {
-p[i]=i+1;i++;}        
+p[i]=i+1;
+i++;}        
 }
 n=i;
 for(i=0;i<n;i++)
@@ -47,12 +49,13 @@ for(i=0;i<n;i++)
 {
 tat[i]=bt[i]+wt[i];     
 total+=tat[i];
-printf("\np%d\t\t  %d\t\t    %d\t\t\t%d",p[i],bt[i],wt[i],tat[i]);
+printf("\n p %d\t\t  %d\t\t    %d\t\t\t %d",p[i],bt[i],wt[i],tat[i]);
 }
 avg_tat=(float)total/n;     
 printf("\n\nAverage Waiting Time=%f",avg_wt);
 printf("\nAverage Turnaround Time=%f\n",avg_tat);
 fclose(fp);
 return 0;
+getch();
 }
 
